@@ -309,5 +309,3 @@ Contributions are welcome. If you want to improve retrieval quality, deployment 
 For questions or collaboration, use the repository issues and discussions page.
 
 ---
-
-This README is intended to be practical and developer-friendly, with enough detail to help someone understand, run, and extend the project.
