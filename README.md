@@ -18,31 +18,29 @@ Most enterprise knowledge lives in PDFs and internal documentation, not in struc
 
 This repository implements that workflow end-to-end.
 
-## Architecture
 
-```text
-PDF Documents
-  ↓
-Document Loading
-  ↓
-Chunking
-  ↓
-Embedding Generation
-  ↓
-FAISS + BM25 Retrieval
-  ↓
-Hybrid Retrieval + RRF
-  ↓
-Candidate Pool
-  ↓
-Cross-Encoder Reranking
-  ↓
-Top-k Context Selection
-  ↓
-Ollama LLM
-  ↓
-Answer + Source References
+## Enterprise RAG Architecture
+
+```mermaid
+flowchart TD
+    A[PDF Documents] --> B[Document Loading]
+    B --> C[Text Extraction and Chunking]
+    C --> D[Embedding Generation - Nomic]
+
+    D --> E[Hybrid Retrieval]
+    E --> F[FAISS Vector Search]
+    E --> G[BM25 Keyword Search]
+
+    F --> H[Reciprocal Rank Fusion - RRF]
+    G --> H
+
+    H --> I[Candidate Pool]
+    I --> J[Cross-Encoder Reranking]
+    J --> K[Top-K Context Selection]
+    K --> L[Ollama LLM]
+    L --> M[Answer + Source References]
 ```
+
 
 ## Key Features
 
