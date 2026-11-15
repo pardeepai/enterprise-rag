@@ -10,6 +10,7 @@ uvicorn[standard]==0.37.0
 # -----------------------------
 
 llama-index==0.13.3
+llama-index-readers-file
 nltk==3.9.1
 
 # -----------------------------
@@ -38,7 +39,7 @@ faiss-cpu==1.12.0
 # -----------------------------
 
 pymupdf==1.26.4
-pypdf==6.0.0
+pypdf>=6.1.3,<7
 
 # -----------------------------
 # Configuration
@@ -64,6 +65,8 @@ loguru==0.7.3
 
 numpy==2.3.2
 tqdm==4.67.1
+pandas>=2.0.0
+PyYAML>=6.0
 
 # -----------------------------
 # File Upload
@@ -78,15 +81,20 @@ python-multipart==0.0.20
 pytest==8.4.2
 httpx==0.28.1
 
+# -----------------------------
 # BM25 Keyword Search
+# -----------------------------
+
 bm25s>=0.1.8
 
+# -----------------------------
 # Reciprocal Rank Fusion & Ranking Utilities
+# -----------------------------
+
 ranx>=0.3.11
 
-# Supporting Data & Math Libraries
-numpy>=1.24.0
-pandas>=2.0.0
-PyYAML>=6.0
+# -----------------------------
+# Embedding & Reranking
+# -----------------------------
 
 sentence-transformers
